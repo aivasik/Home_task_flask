@@ -1,0 +1,20 @@
+<form method="POST" action="/register">
+   {{ errors }}
+   {{ form.csrf_token }}
+   {{ form.name.label }} {{ form.name(size=20) }}
+   {{ form.email.label }} {{ form.email(size=20) }}
+   {{ form.gender.label }}
+   {% for subfield in form.gender %}
+        <tr>
+            <td>{{ subfield }}</td>
+            <td>{{ subfield.label }}</td>
+        </tr>
+   {% endfor %}
+   {{ form.age.label }} {{ form.age() }}
+   {{ form.created.label }} {{ form.created() }}
+   {{ form.password.label }} {{ form.password(size=20) }}
+   {{ form.confirm.label }} {{ form.confirm(size=20) }}
+   {{ form.IPv4.label }} {{ form.IPv4(size=20) }}
+   {{ form.profs.label }} {{ form.profs() }}
+   <input type="submit" value="Go">
+</form>
